@@ -1,11 +1,12 @@
 \documentclass[12pt,a4paper,oneside]{report}
-\usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=3.5cm,right=2cm]{geometry}
+\usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=3cm,right=2cm]{geometry}
 \usepackage{fontspec}
-\setmainfont{TeX Gyre Termes}
+\setmainfont{Times New Roman}
 \usepackage[vietnamese]{babel}
 \usepackage{setspace}\onehalfspacing
 \usepackage{indentfirst}\setlength{\parindent}{1.27cm}\setlength{\parskip}{3pt}
 \usepackage{booktabs,longtable,tabularx,multirow,array,makecell}
+\usepackage{fvextra}
 \usepackage{graphicx,float,caption,subcaption}
 \usepackage{amsmath,amssymb}
 \usepackage{enumitem}
@@ -26,9 +27,11 @@
 \usepackage{titlesec}
 \usepackage{tocloft}
 \renewcommand{\bibname}{TÀI LIỆU THAM KHẢO}
-\renewcommand{\contentsname}{MỤC LỤC}
-\renewcommand{\listfigurename}{DANH MỤC HÌNH}
-\renewcommand{\listtablename}{DANH MỤC BẢNG}
+\addto\captionsvietnamese{%
+\renewcommand{\contentsname}{MỤC LỤC}%
+\renewcommand{\listfigurename}{DANH MỤC HÌNH}%
+\renewcommand{\listtablename}{DANH MỤC BẢNG}%
+}
 \titleformat{\chapter}[display]{\bfseries\centering\fontsize{14}{17}\selectfont}{CHƯƠNG \thechapter}{6pt}{\MakeUppercase}
 \titleformat{name=\chapter,numberless}[display]{\bfseries\centering\fontsize{14}{17}\selectfont}{}{0pt}{\MakeUppercase}
 \titleformat{\section}{\bfseries\fontsize{13}{16}\selectfont}{\thesection}{0.7em}{}
@@ -37,43 +40,46 @@
 \setlength{\headheight}{15.2pt}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\thepage}\renewcommand{\headrulewidth}{0pt}}
 \newcommand{\placeholder}[1]{\textbf{[#1]}}
-\newcommand{\HRule}{\rule{0.85\textwidth}{0.8pt}}
+\newcommand{\thesistitle}{CÁC YẾU TỐ ẢNH HƯỞNG ĐẾN QUYẾT ĐỊNH CHỌN TRƯỜNG/NGÀNH HỌC CỦA HỌC SINH THPT TẠI CÁC TỈNH ĐỒNG BẰNG SÔNG CỬU LONG}
 \begin{document}
 \pagenumbering{gobble}
-\begin{titlepage}\centering
-\begin{tikzpicture}[remember picture,overlay]\draw[line width=1.2pt] ([xshift=1.8cm,yshift=-1.5cm]current page.north west) rectangle ([xshift=-1.4cm,yshift=1.5cm]current page.south east);\draw[line width=.35pt] ([xshift=1.95cm,yshift=-1.65cm]current page.north west) rectangle ([xshift=-1.55cm,yshift=1.65cm]current page.south east);\end{tikzpicture}
-{\bfseries\fontsize{13}{16}\selectfont BỘ GIÁO DỤC VÀ ĐÀO TẠO\\TRƯỜNG ĐẠI HỌC CẦN THƠ\\KHOA BÁCH KHOA\par}
-\vspace{.7cm}\begin{tikzpicture}\node[draw,circle,minimum size=17mm,font=\bfseries] at (0,0) {CTU};\end{tikzpicture}
-\vspace{.8cm}{\bfseries\Large PHẠM DUY TÂN\par}\vspace{1.1cm}
-{\bfseries\fontsize{17}{22}\selectfont CÁC YẾU TỐ ẢNH HƯỞNG ĐẾN QUYẾT ĐỊNH CHỌN TRƯỜNG/NGÀNH HỌC CỦA HỌC SINH THPT TẠI CÁC TỈNH ĐỒNG BẰNG SÔNG CỬU LONG\par}
-\vspace{1.1cm}\HRule\\[.35cm]{\bfseries\fontsize{14}{17}\selectfont LUẬN VĂN TỐT NGHIỆP ĐẠI HỌC\par}\vspace{.35cm}\HRule
-\vspace{.65cm}{Ngành: Kỹ thuật điện\qquad Khóa: K50\par}
-\vfill{\bfseries CẦN THƠ - 2026\par}
-\end{titlepage}
-\begin{titlepage}\centering
-{\bfseries BỘ GIÁO DỤC VÀ ĐÀO TẠO\\TRƯỜNG ĐẠI HỌC CẦN THƠ\\KHOA BÁCH KHOA\par}
-\vspace{1.5cm}{\bfseries\Large PHẠM DUY TÂN\\MSSV: B2407059\par}\vspace{1cm}
-{\bfseries\fontsize{16}{20}\selectfont CÁC YẾU TỐ ẢNH HƯỞNG ĐẾN QUYẾT ĐỊNH CHỌN TRƯỜNG/NGÀNH HỌC CỦA HỌC SINH THPT TẠI CÁC TỈNH ĐỒNG BẰNG SÔNG CỬU LONG\par}
-\vspace{1cm}{\bfseries LUẬN VĂN TỐT NGHIỆP ĐẠI HỌC\\Ngành: Kỹ thuật điện -- Khóa: K50\par}
-\vspace{1.5cm}\begin{flushright}\begin{minipage}{0.52\textwidth}\centering
-{\bfseries CÁN BỘ HƯỚNG DẪN\\TS. NGÔ QUANG HIẾU\par}
-\end{minipage}\end{flushright}
-\vfill{\bfseries Cần Thơ, 2026\par}
+\begin{titlepage}\thispagestyle{empty}\centering
+{\fontsize{13}{17}\selectfont
+BỘ GIÁO DỤC VÀ ĐÀO TẠO\\
+\textbf{TRƯỜNG ĐẠI HỌC CẦN THƠ}\\
+TRƯỜNG BÁCH KHOA\\
+KHOA KỸ THUẬT ĐIỆN\\[-2pt]
+--------------------\par}
+\vspace{2.1cm}
+{\fontsize{17}{22}\selectfont\bfseries LUẬN VĂN TỐT NGHIỆP ĐẠI HỌC\par}
+\vspace{1.6cm}
+{\fontsize{20}{27}\selectfont\bfseries \thesistitle\par}
+\vfill
+\begin{tabularx}{\textwidth}{@{}>{\centering\arraybackslash}X>{\centering\arraybackslash}X@{}}
+{\fontsize{13}{17}\selectfont\bfseries CÁN BỘ HƯỚNG DẪN} & {\fontsize{13}{17}\selectfont\bfseries SINH VIÊN THỰC HIỆN}\\[5pt]
+{\fontsize{13}{17}\selectfont\bfseries TS. NGÔ QUANG HIẾU} & {\fontsize{13}{17}\selectfont\bfseries PHẠM DUY TÂN}\\
+& {\fontsize{13}{17}\selectfont MSSV: B2407059}\\
+& {\fontsize{13}{17}\selectfont Ngành: Kỹ thuật điện -- Khóa: K50}
+\end{tabularx}
+\vspace{2.2cm}
+{\fontsize{13}{17}\selectfont\bfseries CẦN THƠ, THÁNG 7/2026\par}
 \end{titlepage}
 \clearpage\input{frontmatter/approval}\clearpage
 \input{frontmatter/evaluation}\clearpage
 \input{frontmatter/commitment}\clearpage
-\input{frontmatter/acknowledgements}\clearpage
 \pagenumbering{roman}\setcounter{page}{1}
-\tableofcontents\clearpage
-\listoftables\clearpage
-\listoffigures\clearpage
-\input{frontmatter/abbreviations}\clearpage
+\input{frontmatter/acknowledgements}\clearpage
 \input{frontmatter/abstract}\clearpage
-\input{chapters/introduction}\clearpage
+\tableofcontents\clearpage
+\listoffigures\clearpage
+\listoftables\clearpage
+\input{frontmatter/abbreviations}\clearpage
 \pagenumbering{arabic}\setcounter{page}{1}
+\input{chapters/introduction}\clearpage
 \input{chapters/chapter1}\input{chapters/chapter2}\input{chapters/chapter3}
 \input{chapters/conclusion}
 \cleardoublepage\bibliographystyle{unsrtnat}\bibliography{references}
-\appendix\input{appendices/questionnaire}\input{appendices/coding}\input{appendices/spss}
+\appendix
+\titleformat{\chapter}[display]{\bfseries\centering\fontsize{14}{17}\selectfont}{PHỤ LỤC \thechapter}{6pt}{\MakeUppercase}
+\input{appendices/questionnaire}\input{appendices/coding}\input{appendices/spss}
 \end{document}

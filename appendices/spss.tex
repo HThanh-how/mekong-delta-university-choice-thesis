@@ -1,46 +1,14 @@
 \chapter{HỒ SƠ PHÂN TÍCH SPSS}
 \section*{Mục đích}
-Phụ lục này trình bày cú pháp SPSS có thể chạy lại toàn bộ quy trình phân tích trên bộ dữ liệu khảo sát gồm 486 quan sát.
+Phụ lục trình bày cú pháp SPSS để nhập tệp \texttt{data/survey\_486.csv}, tính điểm thang đo và chạy lại các phân tích chính. Tên biến và định dạng được khai báo tường minh để cú pháp không phụ thuộc vào trình hướng dẫn nhập dữ liệu.
 
 \section*{Cú pháp SPSS tái lập}
-\begin{verbatim}
-GET DATA /TYPE=TXT
- /FILE='data/survey_486.csv'
- /ENCODING='UTF8' /DELCASE=LINE /DELIMITERS="," /ARRANGEMENT=DELIMITED
- /FIRSTCASE=2 /IMPORTCASE=ALL.
-DATASET NAME ChoiceData.
-
-RELIABILITY /VARIABLES=FIT1 FIT2 FIT3 FIT4
- /SCALE('FIT') ALL /MODEL=ALPHA /STATISTICS=DESCRIPTIVE SCALE CORR.
-RELIABILITY /VARIABLES=CAR1 CAR2 CAR3 CAR4
- /SCALE('CAR') ALL /MODEL=ALPHA /STATISTICS=DESCRIPTIVE SCALE CORR.
-RELIABILITY /VARIABLES=REP1 REP2 REP3 REP4
- /SCALE('REP') ALL /MODEL=ALPHA /STATISTICS=DESCRIPTIVE SCALE CORR.
-RELIABILITY /VARIABLES=COS1 COS2 COS3 COS4 SOC1 SOC2 SOC3 SOC4
- COM1 COM2 COM3 COM4 LOC1 LOC2 LOC3 LOC4 DEC1 DEC2 DEC3 DEC4
- /SCALE('ALL') ALL /MODEL=ALPHA.
-
-FACTOR /VARIABLES FIT1 TO LOC4 /MISSING LISTWISE
- /ANALYSIS FIT1 TO LOC4 /PRINT INITIAL KMO EXTRACTION ROTATION
- /FORMAT SORT BLANK(.50) /CRITERIA MINEIGEN(1) ITERATE(25)
- /EXTRACTION PAF /ROTATION PROMAX /METHOD=CORRELATION.
-
-COMPUTE FIT=MEAN(FIT1 TO FIT4). COMPUTE CAR=MEAN(CAR1 TO CAR4).
-COMPUTE REP=MEAN(REP1 TO REP4). COMPUTE COS=MEAN(COS1 TO COS4).
-COMPUTE SOC=MEAN(SOC1 TO SOC4). COMPUTE COM=MEAN(COM1 TO COM4).
-COMPUTE LOC=MEAN(LOC1 TO LOC4). COMPUTE DEC=MEAN(DEC1 TO DEC4).
-EXECUTE.
-
-CORRELATIONS /VARIABLES=FIT CAR REP COS SOC COM LOC DEC
- /PRINT=TWOTAIL SIG /MISSING=PAIRWISE.
-REGRESSION /DEPENDENT DEC /METHOD=ENTER FIT CAR REP COS SOC COM LOC
- /STATISTICS COEFF OUTS R ANOVA COLLIN TOL CI(95)
- /RESIDUALS DURBIN HISTOGRAM(ZRESID) NORMPROB(ZRESID)
- /SAVE ZPRED ZRESID COOK.
-T-TEST GROUPS=KhuVuc(0 1) /VARIABLES=LOC DEC /CRITERIA=CI(.95).
-ONEWAY COS BY ThuNhap /STATISTICS DESCRIPTIVES HOMOGENEITY
- /POSTHOC=GAMESHOWELL ALPHA(.05).
-\end{verbatim}
+\VerbatimInput[fontsize=\scriptsize,breaklines=true,breakanywhere=true]{analysis/spss_analysis.sps}
 
 \section*{Các bảng đầu ra cần lưu từ SPSS}
-Reliability Statistics và Item--Total Statistics cho từng thang đo; KMO and Bartlett's Test; Total Variance Explained; Pattern Matrix; Correlations; Model Summary; ANOVA; Coefficients kèm Tolerance/VIF; Histogram phần dư; Normal P--P Plot; Scatterplot ZPRED--ZRESID; Group Statistics, Independent Samples Test và bảng hậu kiểm ANOVA.
+\begin{itemize}[leftmargin=1.5cm]
+\item Frequencies, Descriptives, Reliability Statistics và Item--Total Statistics.
+\item KMO and Bartlett's Test, Total Variance Explained và Pattern Matrix.
+\item Correlations, Model Summary, ANOVA và Coefficients kèm Tolerance/VIF.
+\item Biểu đồ phần dư, Cook's Distance, Independent Samples Test và ANOVA theo nhóm.
+\end{itemize}

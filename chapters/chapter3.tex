@@ -1,101 +1,102 @@
 \chapter{NỘI DUNG VÀ KẾT QUẢ NGHIÊN CỨU}
-\section{Mô tả mẫu nghiên cứu}
-Nghiên cứu phát 530 phiếu, nhận 505 phiếu và loại 19 phiếu không đạt tiêu chí, còn 486 quan sát hợp lệ (91,7\% số phát). Phân bố theo tám địa bàn giúp giảm sự tập trung vào Cần Thơ, song đây chưa phải mẫu xác suất đại diện toàn vùng.
+\section{Mô tả tệp phân tích}
+Tệp dữ liệu phân tích gồm 486 quan sát và 36 biến, không có giá trị thiếu. Ngoài mã số quan sát, tệp lưu ba đặc điểm nền (giới tính, khu vực cư trú và thu nhập hộ gia đình) cùng 32 biến Likert thuộc tám thang đo. Các tỷ lệ dưới đây được tính trực tiếp từ tệp \texttt{data/survey\_486.csv}.
 
 \begin{table}[H]\centering\caption{Đặc điểm mẫu nghiên cứu ($n=486$)}\label{tab:sample}
-\begin{tabularx}{\textwidth}{p{3.2cm}X r r}\toprule Đặc điểm & Nhóm & Tần số & Tỷ lệ (\%)\\\midrule
+\begin{tabularx}{\textwidth}{p{3.5cm}X r r}\toprule Đặc điểm & Nhóm & Tần số & Tỷ lệ (\%)\\\midrule
 Giới tính & Nam & 218 & 44,9\\ & Nữ & 261 & 53,7\\ & Khác/không trả lời & 7 & 1,4\\
 Khu vực & Thành thị & 205 & 42,2\\ & Nông thôn & 281 & 57,8\\
-Học lực & Tốt & 166 & 34,2\\ & Khá & 257 & 52,9\\ & Đạt/khác & 63 & 13,0\\
 Thu nhập gia đình/tháng & Dưới 10 triệu đồng & 196 & 40,3\\ & 10--20 triệu đồng & 203 & 41,8\\ & Trên 20 triệu đồng & 87 & 17,9\\\bottomrule
 \end{tabularx}\end{table}
 
-Trong mẫu nghiên cứu, 64,8\% học sinh cho biết đã xác định tương đối rõ ngành dự định, nhưng chỉ 52,5\% khẳng định chắc chắn trường ưu tiên. Khoảng cách này gợi ý học sinh có thể hình thành sở thích ngành trước khi chốt cơ sở đào tạo, phù hợp logic ba giai đoạn.
+Mẫu có tỷ lệ nữ cao hơn nam 8,8 điểm phần trăm; học sinh nông thôn chiếm 57,8\%. Hai nhóm thu nhập dưới 10 triệu đồng và từ 10--20 triệu đồng có quy mô gần tương đương, trong khi nhóm trên 20 triệu đồng chiếm 17,9\%. Những đặc điểm này cần được lưu ý khi diễn giải và giới hạn khả năng suy rộng.
 
 \input{chapters/figures}
 
 \section{Thống kê mô tả các thang đo}
 \begin{table}[H]\centering\caption{Thống kê mô tả theo nhân tố}\label{tab:desc}
 \begin{tabular}{lccc}\toprule Nhân tố & Số biến & Trung bình & Độ lệch chuẩn\\\midrule
-FIT & 4 & 4,08 & 0,58\\ CAR & 4 & 4,21 & 0,55\\ REP & 4 & 3,94 & 0,61\\ COS & 4 & 3,72 & 0,69\\ SOC & 4 & 3,55 & 0,73\\ COM & 4 & 3,67 & 0,66\\ LOC & 4 & 3,78 & 0,70\\ DEC & 4 & 3,91 & 0,64\\\bottomrule
+FIT & 4 & 4,066 & 0,512\\ CAR & 4 & 4,228 & 0,497\\ REP & 4 & 3,939 & 0,554\\ COS & 4 & 3,735 & 0,527\\ SOC & 4 & 3,584 & 0,545\\ COM & 4 & 3,698 & 0,528\\ LOC & 4 & 3,779 & 0,532\\ DEC & 4 & 3,961 & 0,437\\\bottomrule
 \end{tabular}\end{table}
-Triển vọng nghề nghiệp có trung bình cao nhất, tiếp đến là phù hợp cá nhân. Ảnh hưởng xã hội thấp nhất nhưng vẫn trên trung điểm, cho thấy người thân và thầy cô có vai trò, dù học sinh không hoàn toàn giao quyết định cho người khác.
+Triển vọng nghề nghiệp có điểm trung bình cao nhất, tiếp đến là phù hợp cá nhân. Ảnh hưởng xã hội có điểm trung bình thấp nhất nhưng vẫn cao hơn trung điểm của thang đo. Điểm DEC đạt 3,961, cho thấy mức ưu tiên và sẵn sàng đăng ký nhìn chung tương đối cao trong mẫu.
 
 \section{Kiểm định độ tin cậy}
 \begin{table}[H]\centering\caption{Độ tin cậy thang đo}\label{tab:alpha}
 \begin{tabular}{lccc}\toprule Thang đo & Cronbach's Alpha & Tương quan biến--tổng nhỏ nhất & Kết luận\\\midrule
-FIT & 0,864 & 0,631 & Đạt\\ CAR & 0,881 & 0,674 & Đạt\\ REP & 0,852 & 0,608 & Đạt\\ COS & 0,826 & 0,572 & Đạt\\ SOC & 0,804 & 0,541 & Đạt\\ COM & 0,838 & 0,586 & Đạt\\ LOC & 0,817 & 0,559 & Đạt\\ DEC & 0,872 & 0,649 & Đạt\\\bottomrule
+FIT & 0,771 & 0,528 & Đạt\\ CAR & 0,766 & 0,546 & Đạt\\ REP & 0,801 & 0,593 & Đạt\\ COS & 0,793 & 0,584 & Đạt\\ SOC & 0,782 & 0,572 & Đạt\\ COM & 0,772 & 0,540 & Đạt\\ LOC & 0,771 & 0,531 & Đạt\\ DEC & 0,725 & 0,457 & Đạt\\\bottomrule
 \end{tabular}\end{table}
-Tất cả Alpha vượt 0,8 và không có biến nào có tương quan biến--tổng dưới 0,3. Việc loại biến chỉ được thực hiện khi đồng thời có căn cứ thống kê và nội dung; không loại máy móc để tăng Alpha.
+Cronbach's Alpha của các thang đo nằm trong khoảng 0,725--0,801 và các tương quan biến--tổng hiệu chỉnh đều lớn hơn 0,30. Vì vậy, cả tám thang đo đáp ứng ngưỡng sử dụng trong nghiên cứu khám phá; không có biến nào bị loại chỉ nhằm làm tăng Alpha.
 
 \section{Phân tích nhân tố khám phá}
-EFA cho 28 biến độc lập đạt KMO = 0,901; Bartlett $\chi^2=5.842,6$, $df=378$, $p<0,001$. Phương pháp trích Principal Axis Factoring và xoay Promax tạo bảy nhân tố có eigenvalue lớn hơn 1, tổng phương sai trích 68,4\%. Tải chuẩn hóa nằm trong khoảng 0,612--0,862; không có tải chéo đáng kể. Bốn biến DEC tạo một nhân tố, KMO = 0,821, phương sai trích 72,4\%.
+EFA cho 28 biến độc lập đạt KMO = 0,754; kiểm định Bartlett $\chi^2=3.768,26$, $df=378$, $p<0,001$. Phép trích nhân tố và xoay Promax tạo bảy nhân tố có eigenvalue lớn hơn 1. Tổng phương sai trích đạt 60,91\%; tải chính của các biến nằm trong khoảng 0,731--0,808. Cấu trúc tải cho thấy bốn biến của mỗi thang đo cùng hội tụ về một nhân tố và không có tải chéo đáng kể.
 
 \begin{table}[H]\centering\caption{Tóm tắt EFA}\label{tab:efa}
-\begin{tabular}{lrrrr}\toprule Nhân tố & Số biến & Eigenvalue & Phương sai (\%) & Tải nhỏ nhất\\\midrule
-FIT & 4 & 5,91 & 21,1 & 0,704\\ CAR & 4 & 3,47 & 12,4 & 0,731\\ REP & 4 & 2,76 & 9,9 & 0,681\\ COS & 4 & 2,13 & 7,6 & 0,649\\ SOC & 4 & 1,87 & 6,7 & 0,612\\ COM & 4 & 1,62 & 5,8 & 0,658\\ LOC & 4 & 1,38 & 4,9 & 0,638\\\bottomrule
+\begin{tabular}{lrrr}\toprule Nhân tố & Số biến & Phương sai (\%) & Tải chính nhỏ nhất\\\midrule
+FIT & 4 & 8,52 & 0,731\\ CAR & 4 & 8,52 & 0,747\\ REP & 4 & 9,07 & 0,772\\ COS & 4 & 8,92 & 0,769\\ SOC & 4 & 8,72 & 0,763\\ COM & 4 & 8,58 & 0,740\\ LOC & 4 & 8,58 & 0,731\\\midrule
+Tổng & 28 & 60,91 & --\\\bottomrule
 \end{tabular}\end{table}
 
 \section{Tương quan và hồi quy}
-Các tương quan giữa DEC và bảy biến độc lập đều dương, từ 0,31 đến 0,65 và có ý nghĩa ở mức 1\%. Tương quan giữa các biến độc lập nhỏ hơn 0,70. Mô hình hồi quy:
+Tương quan giữa DEC và các biến độc lập nằm trong khoảng 0,030--0,342. FIT có tương quan mạnh nhất với DEC ($r=0,342$), trong khi COM có tương quan yếu nhất ($r=0,030$). Tương quan tuyệt đối lớn nhất giữa hai biến độc lập là 0,140, thấp hơn nhiều so với ngưỡng cảnh báo đa cộng tuyến. Mô hình hồi quy được ước lượng như sau:
 \begin{equation}
 DEC=\beta_0+\beta_1FIT+\beta_2CAR+\beta_3REP+\beta_4COS+\beta_5SOC+\beta_6COM+\beta_7LOC+\varepsilon.
 \end{equation}
 
 \begin{table}[H]\centering\caption{Kết quả hồi quy đa biến}\label{tab:reg}
 \begin{tabular}{lrrrrr}\toprule Biến & B & Sai số chuẩn & Beta & $p$ & VIF\\\midrule
-Hằng số & 0,214 & 0,147 & -- & 0,146 & --\\
-FIT & 0,274 & 0,038 & 0,286 & $<0,001$ & 1,68\\
-CAR & 0,238 & 0,041 & 0,241 & $<0,001$ & 1,73\\
-REP & 0,171 & 0,036 & 0,183 & $<0,001$ & 1,59\\
-COS & 0,128 & 0,031 & 0,146 & $<0,001$ & 1,42\\
-SOC & 0,096 & 0,029 & 0,112 & 0,001 & 1,36\\
-COM & 0,071 & 0,033 & 0,078 & 0,032 & 1,51\\
-LOC & 0,087 & 0,030 & 0,098 & 0,004 & 1,39\\\bottomrule
-\multicolumn{6}{l}{$R^2=0,612$; $R^2$ hiệu chỉnh $=0,606$; $F(7,478)=107,7$; $p<0,001$.}
+Hằng số & -0,278 & 0,349 & -- & 0,426 & --\\
+FIT & 0,283 & 0,033 & 0,331 & $<0,001$ & 1,002\\
+CAR & 0,193 & 0,034 & 0,219 & $<0,001$ & 1,003\\
+REP & 0,162 & 0,031 & 0,205 & $<0,001$ & 1,004\\
+COS & 0,147 & 0,033 & 0,177 & $<0,001$ & 1,023\\
+SOC & 0,108 & 0,031 & 0,134 & 0,001 & 1,004\\
+COM & 0,050 & 0,033 & 0,060 & 0,129 & 1,022\\
+LOC & 0,137 & 0,032 & 0,167 & $<0,001$ & 1,002\\\bottomrule
+\multicolumn{6}{l}{$R^2=0,271$; $R^2$ hiệu chỉnh $=0,261$; $F(7,478)=25,423$; $p<0,001$.}
 \end{tabular}\end{table}
 
-Mô hình giải thích 60,6\% biến thiên DEC. VIF dưới 2 cho thấy chưa có dấu hiệu đa cộng tuyến nghiêm trọng. Phù hợp cá nhân có tác động chuẩn hóa mạnh nhất ($\beta=0,286$), kế đến là triển vọng nghề nghiệp ($\beta=0,241$). Cả H1--H7 được ủng hộ ở mức 5\%. Thứ tự tác động không nên diễn giải là quan hệ nhân quả vì dữ liệu cắt ngang.
+Mô hình giải thích 26,1\% biến thiên DEC sau hiệu chỉnh. FIT có tác động chuẩn hóa mạnh nhất ($\beta=0,331$), tiếp theo là CAR, REP, COS, LOC và SOC. COM có hệ số dương nhưng không có ý nghĩa thống kê ($p=0,129$). Do đó H1--H5 và H7 được ủng hộ ở mức 5\%, còn H6 chưa được ủng hộ. Kết quả phản ánh quan hệ liên kết trong dữ liệu cắt ngang, không phải bằng chứng nhân quả.
 
 \section{Kiểm tra giả định và độ bền}
-Biểu đồ phần dư chuẩn hóa được kiểm tra trực tiếp trong quá trình phân tích. Durbin--Watson = 1,94; đồ thị P--P không lệch đáng kể; tương quan Spearman giữa trị tuyệt đối phần dư và giá trị dự báo không có ý nghĩa. Không quan sát nào có Cook's Distance lớn hơn 1. Phân tích độ bền có thể dùng sai số chuẩn robust HC3 và hồi quy thứ bậc, đưa đặc điểm nhân khẩu học vào khối đầu tiên.
+Durbin--Watson = 2,064, gần giá trị 2. VIF của các biến đều xấp xỉ 1 và nhỏ hơn 2. Tương quan Spearman giữa trị tuyệt đối phần dư và giá trị dự báo không có ý nghĩa ($\rho=0,001$, $p=0,982$); kiểm định Breusch--Pagan cũng không phát hiện phương sai thay đổi ($F=0,813$, $p=0,577$). Cook's Distance lớn nhất bằng 0,046, thấp hơn 1. Khi dùng sai số chuẩn robust HC3, kết luận về ý nghĩa của các biến không thay đổi; COM vẫn không có ý nghĩa ($p=0,149$).
 
 \section{Phân tích khác biệt nhóm}
-Kiểm định $t$ cho thấy nhóm nông thôn đánh giá LOC cao hơn nhóm thành thị ($M=3,91$ so với $3,60$, $p<0,001$). Nhóm thu nhập dưới 10 triệu đồng đánh giá COS cao hơn hai nhóm còn lại ($p=0,003$). Không ghi nhận khác biệt DEC có ý nghĩa theo giới tính ($p=0,284$). ANOVA theo học lực cho thấy FIT khác biệt ($p=0,012$), nhưng kích thước ảnh hưởng nhỏ ($\eta^2=0,018$). Kiểm định Levene được sử dụng để đánh giá tính đồng nhất phương sai; báo cáo Welch được dùng khi phương sai không đồng nhất và có điều chỉnh hậu kiểm.
+Điểm LOC trung bình của nhóm thành thị là 3,743 và nhóm nông thôn là 3,806; kiểm định Welch không ghi nhận khác biệt có ý nghĩa ($t=-1,314$, $p=0,189$). Điểm COS trung bình lần lượt là 3,705; 3,755 và 3,753 ở ba nhóm thu nhập; ANOVA không cho thấy khác biệt ($F=0,504$, $p=0,604$). DEC cũng không khác biệt theo giới tính ($F=0,150$, $p=0,861$). Vì vậy, dữ liệu hiện tại chưa cung cấp bằng chứng về khác biệt nhóm đối với ba so sánh này.
 
 \section{Thảo luận}
-Kết quả nghiên cứu đặt tính phù hợp cá nhân ở vị trí trung tâm. Điều này phù hợp tiếp cận người--môi trường: một ngành có triển vọng nhưng không hợp sở thích và năng lực có thể không tạo ý định bền vững. Tác động mạnh của CAR phù hợp logic đầu tư vốn con người và bối cảnh học sinh quan tâm khả năng việc làm sau tốt nghiệp.
+Kết quả đặt tính phù hợp cá nhân ở vị trí trung tâm. Điều này phù hợp tiếp cận người--môi trường: một lựa chọn có triển vọng nhưng không phù hợp sở thích và năng lực có thể khó tạo ý định bền vững. CAR và REP tiếp tục có hệ số đáng kể, cho thấy học sinh đồng thời cân nhắc cơ hội nghề nghiệp và tín hiệu chất lượng của cơ sở đào tạo.
 
-REP có tác động đứng thứ ba, cho thấy danh tiếng chỉ có ý nghĩa khi đi kèm bằng chứng về chương trình, giảng viên và điều kiện học. COS và LOC phản ánh ràng buộc thực tế của gia đình tại địa bàn phân tán. SOC dương nhưng không lấn át FIT, hàm ý tư vấn nên hỗ trợ học sinh tự khám phá thay vì quyết định thay. COM có hệ số nhỏ nhất; truyền thông có thể là điều kiện cung cấp thông tin hơn là lý do cốt lõi.
+COS và LOC có tác động dương, phản ánh các ràng buộc tài chính và địa lý trong quá trình lựa chọn. SOC có tác động nhỏ hơn nhưng vẫn có ý nghĩa. Ngược lại, COM không có ý nghĩa khi kiểm soát đồng thời các yếu tố khác. Kết quả này không hàm ý truyền thông tuyển sinh không cần thiết; truyền thông có thể đóng vai trò cung cấp thông tin nền, nhưng chưa thể hiện tác động độc lập rõ ràng lên DEC trong mô hình hiện tại.
 
 \section{Hàm ý quản trị}
 \subsection{Đối với Trường Đại học Cần Thơ và các cơ sở đào tạo}
 \begin{enumerate}[label=\arabic*)]
-\item Xây dựng trang ``khám phá ngành'' liên kết sở thích--năng lực với chuẩn đầu ra, học phần mẫu và vị trí việc làm; công bố rõ giới hạn của công cụ tự đánh giá.
-\item Thay thông điệp việc làm chung chung bằng số liệu truy vết cựu sinh viên có phương pháp, thời điểm khảo sát và cỡ mẫu; mời cựu sinh viên chia sẻ cả thuận lợi lẫn thách thức.
-\item Minh bạch tổng chi phí theo năm, học bổng, ký túc xá và các kịch bản tài chính; thiết kế thông tin dễ đọc trên điện thoại.
-\item Phân nhóm nội dung theo khối ngành và địa bàn. Với học sinh xa Cần Thơ, cung cấp tour ký túc xá trực tuyến, thông tin giao thông và hỗ trợ thích nghi.
-\item Phối hợp trường THPT tổ chức trải nghiệm ngành: lớp học thử, bài toán nghề nghiệp, tham quan phòng thí nghiệm và tư vấn một--một.
+\item Xây dựng trang ``khám phá ngành'' liên kết sở thích--năng lực với chuẩn đầu ra, học phần và vị trí việc làm.
+\item Công bố dữ liệu việc làm có phương pháp, thời điểm khảo sát và cỡ mẫu thay cho các thông điệp chung chung.
+\item Minh bạch tổng chi phí, học bổng, ký túc xá và phương án hỗ trợ tài chính theo từng năm học.
+\item Cung cấp thông tin giao thông, chỗ ở và hỗ trợ thích nghi cho học sinh ở xa.
+\item Đánh giá hiệu quả truyền thông bằng chỉ số hiểu đúng và chất lượng quyết định, không chỉ bằng lượt tiếp cận.
 \end{enumerate}
 
 \subsection{Đối với trường THPT và gia đình}
-Nhà trường nên triển khai hướng nghiệp theo chu trình tự nhận thức--khám phá nghề--trải nghiệm--ra quyết định; lưu ý phân biệt lời khuyên và áp đặt. Gia đình cần thảo luận sớm ngân sách, địa điểm và mức hỗ trợ, đồng thời tôn trọng sở thích có căn cứ. Giáo viên có thể dùng ma trận so sánh nhiều tiêu chí thay vì chỉ dựa vào điểm chuẩn.
+Nhà trường nên triển khai hướng nghiệp theo chu trình tự nhận thức--khám phá nghề--trải nghiệm--ra quyết định. Gia đình cần thảo luận sớm về ngân sách và địa điểm học, đồng thời tôn trọng sở thích có căn cứ. Giáo viên có thể hướng dẫn học sinh dùng ma trận so sánh nhiều tiêu chí thay vì chỉ dựa vào điểm chuẩn hoặc danh tiếng.
 
 \subsection{Đối với học sinh}
-Học sinh nên lập danh sách phương án theo ba mức phù hợp--vừa sức--an toàn; kiểm tra thông tin tại nguồn chính thức; phỏng vấn người đang học và người làm nghề; đối chiếu sở thích với học phần thực tế; ước tính toàn bộ chi phí và chuẩn bị phương án điều chỉnh. Quyết định tốt không nhất thiết là trường nổi tiếng nhất mà là lựa chọn phù hợp, khả thi và có thông tin xác thực.
+Học sinh nên kiểm tra thông tin tại nguồn chính thức, đối chiếu sở thích với nội dung chương trình, trao đổi với người đang học và người làm nghề, đồng thời ước tính toàn bộ chi phí. Quyết định phù hợp cần cân bằng năng lực, triển vọng nghề nghiệp, chất lượng đào tạo và khả năng thực hiện.
 
 \section{Ma trận ưu tiên hành động}
-\begin{table}[H]\centering\caption{Ma trận hàm ý theo mức tác động và khả năng can thiệp}\begin{tabularx}{\textwidth}{p{2.5cm}p{2cm}p{2.6cm}X}\toprule Yếu tố & Tác động & Khả năng can thiệp & Hành động ưu tiên\\\midrule
-FIT & Rất cao & Cao & Công cụ tự khám phá, trải nghiệm ngành, cố vấn cá nhân\\
-CAR & Cao & Trung bình & Công bố dữ liệu việc làm có phương pháp\\
-REP & Khá cao & Cao & Minh chứng kiểm định, chương trình và giảng viên\\
-COS & Trung bình & Cao & Máy tính tổng chi phí, học bổng và hỗ trợ\\
-SOC & Trung bình & Trung bình & Tư vấn học sinh--phụ huynh--giáo viên\\
-LOC & Thấp hơn & Cao & Ký túc xá, giao thông, hỗ trợ xa nhà\\
-COM & Thấp hơn & Rất cao & Chuẩn hóa nội dung đa kênh, phản hồi nhanh\\\bottomrule\end{tabularx}\end{table}
+\begin{table}[H]\centering\caption{Ma trận hàm ý theo kết quả mô hình}\begin{tabularx}{\textwidth}{p{2.2cm}p{2.6cm}X}\toprule Yếu tố & Bằng chứng & Hành động ưu tiên\\\midrule
+FIT & Mạnh nhất & Công cụ tự khám phá, trải nghiệm ngành, cố vấn cá nhân\\
+CAR & Có ý nghĩa & Công bố dữ liệu việc làm có phương pháp\\
+REP & Có ý nghĩa & Minh chứng kiểm định, chương trình và đội ngũ\\
+COS & Có ý nghĩa & Thông tin tổng chi phí, học bổng và hỗ trợ\\
+LOC & Có ý nghĩa & Ký túc xá, giao thông, hỗ trợ xa nhà\\
+SOC & Có ý nghĩa & Tư vấn phối hợp học sinh--gia đình--giáo viên\\
+COM & Chưa có ý nghĩa & Đo hiệu quả nội dung và cải thiện khả năng tiếp cận\\\bottomrule
+\end{tabularx}\end{table}
 
 \section{Kịch bản triển khai cho Trường Đại học Cần Thơ}
-Trong ngắn hạn, trường chuẩn hóa trang thông tin từng ngành theo cùng cấu trúc: ngành học gì, cần năng lực nào, học phần tiêu biểu, trải nghiệm thực tế, chuẩn đầu ra, dữ liệu việc làm, chi phí và đầu mối hỏi đáp. Trong trung hạn, xây dựng hệ thống tư vấn phân luồng dựa trên sở thích và năng lực, đồng thời giải thích kết quả chỉ mang tính gợi ý. Trong dài hạn, liên kết dữ liệu tuyển sinh--học tập--tốt nghiệp--việc làm để đánh giá chất lượng lựa chọn và phát hiện nhóm cần hỗ trợ sớm.
+Trong ngắn hạn, trường có thể chuẩn hóa trang thông tin từng ngành theo cùng cấu trúc: ngành học gì, cần năng lực nào, học phần tiêu biểu, chuẩn đầu ra, dữ liệu việc làm, chi phí và đầu mối hỏi đáp. Trong trung hạn, có thể xây dựng hệ thống tư vấn dựa trên sở thích và năng lực. Trong dài hạn, việc liên kết dữ liệu tuyển sinh--học tập--tốt nghiệp--việc làm sẽ giúp đánh giá chất lượng lựa chọn và phát hiện nhóm cần hỗ trợ sớm.
 
 \section{Bộ chỉ số đánh giá sau can thiệp}
-Hiệu quả không chỉ đo bằng số hồ sơ. Bộ chỉ số cân bằng gồm tỷ lệ học sinh hiểu đúng chuẩn đầu ra, mức hữu ích của tư vấn, tỷ lệ nhập học trên trúng tuyển, tỷ lệ đổi ngành sau năm nhất, mức hài lòng, tỷ lệ tiếp tục học, chi phí tuyển sinh trên một sinh viên phù hợp và mức tiếp cận của học sinh nông thôn, thu nhập thấp. Chỉ số cần được phân tổ để tránh số trung bình che khuất bất bình đẳng tiếp cận.
+Hiệu quả không chỉ được đo bằng số hồ sơ. Bộ chỉ số cân bằng có thể gồm tỷ lệ học sinh hiểu đúng chuẩn đầu ra, mức hữu ích của tư vấn, tỷ lệ nhập học trên trúng tuyển, tỷ lệ đổi ngành sau năm nhất, mức hài lòng, tỷ lệ tiếp tục học và mức tiếp cận của học sinh nông thôn hoặc thu nhập thấp. Các chỉ số cần được phân tổ để tránh số trung bình che khuất khác biệt tiếp cận.
