@@ -1,0 +1,79 @@
+\documentclass[12pt,a4paper,oneside]{report}
+\usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=3.5cm,right=2cm]{geometry}
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Termes}
+\usepackage[vietnamese]{babel}
+\usepackage{setspace}\onehalfspacing
+\usepackage{indentfirst}\setlength{\parindent}{1.27cm}\setlength{\parskip}{3pt}
+\usepackage{booktabs,longtable,tabularx,multirow,array,makecell}
+\usepackage{graphicx,float,caption,subcaption}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{tikz}\usetikzlibrary{arrows.meta,positioning,shapes.geometric}
+\usepackage{pgfplots}\pgfplotsset{compat=1.18}
+\usepgfplotslibrary{groupplots,statistics,fillbetween}
+\usepackage{xcolor}
+\definecolor{ctublue}{HTML}{145DA0}
+\definecolor{teal}{HTML}{2A9D8F}
+\definecolor{orange}{HTML}{F4A261}
+\definecolor{gold}{HTML}{E9C46A}
+\definecolor{coral}{HTML}{E76F51}
+\definecolor{indigo}{HTML}{4F5D95}
+\definecolor{sky}{HTML}{65B5D8}
+\usepackage[unicode,colorlinks=true,linkcolor=black,citecolor=black,urlcolor=blue]{hyperref}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\renewcommand{\bibname}{TÀI LIỆU THAM KHẢO}
+\renewcommand{\contentsname}{MỤC LỤC}
+\renewcommand{\listfigurename}{DANH MỤC HÌNH}
+\renewcommand{\listtablename}{DANH MỤC BẢNG}
+\titleformat{\chapter}[display]{\bfseries\centering\fontsize{14}{17}\selectfont}{CHƯƠNG \thechapter}{6pt}{\MakeUppercase}
+\titleformat{name=\chapter,numberless}[display]{\bfseries\centering\fontsize{14}{17}\selectfont}{}{0pt}{\MakeUppercase}
+\titleformat{\section}{\bfseries\fontsize{13}{16}\selectfont}{\thesection}{0.7em}{}
+\titleformat{\subsection}{\bfseries\fontsize{12}{15}\selectfont}{\thesubsection}{0.7em}{}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small\nouppercase{\leftmark}}\fancyfoot[C]{\thepage}\renewcommand{\headrulewidth}{0.4pt}
+\setlength{\headheight}{15.2pt}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\thepage}\renewcommand{\headrulewidth}{0pt}}
+\newcommand{\placeholder}[1]{\textbf{[#1]}}
+\newcommand{\HRule}{\rule{0.85\textwidth}{0.8pt}}
+\begin{document}
+\pagenumbering{gobble}
+\begin{titlepage}\centering
+\begin{tikzpicture}[remember picture,overlay]\draw[line width=1.2pt] ([xshift=1.8cm,yshift=-1.5cm]current page.north west) rectangle ([xshift=-1.4cm,yshift=1.5cm]current page.south east);\draw[line width=.35pt] ([xshift=1.95cm,yshift=-1.65cm]current page.north west) rectangle ([xshift=-1.55cm,yshift=1.65cm]current page.south east);\end{tikzpicture}
+{\bfseries\fontsize{13}{16}\selectfont BỘ GIÁO DỤC VÀ ĐÀO TẠO\\TRƯỜNG ĐẠI HỌC CẦN THƠ\\KHOA BÁCH KHOA\par}
+\vspace{.7cm}\begin{tikzpicture}\node[draw,circle,minimum size=17mm,font=\bfseries] at (0,0) {CTU};\end{tikzpicture}
+\vspace{.8cm}{\bfseries\Large PHẠM DUY TÂN\par}\vspace{1.1cm}
+{\bfseries\fontsize{17}{22}\selectfont CÁC YẾU TỐ ẢNH HƯỞNG ĐẾN QUYẾT ĐỊNH CHỌN TRƯỜNG/NGÀNH HỌC CỦA HỌC SINH THPT TẠI CÁC TỈNH ĐỒNG BẰNG SÔNG CỬU LONG\par}
+\vspace{1.1cm}\HRule\\[.35cm]{\bfseries\fontsize{14}{17}\selectfont LUẬN VĂN TỐT NGHIỆP ĐẠI HỌC\par}\vspace{.35cm}\HRule
+\vspace{.65cm}{Ngành: Kỹ thuật điện\qquad Khóa: K50\par}
+\vfill{\bfseries CẦN THƠ - 2026\par}
+\end{titlepage}
+\begin{titlepage}\centering
+{\bfseries BỘ GIÁO DỤC VÀ ĐÀO TẠO\\TRƯỜNG ĐẠI HỌC CẦN THƠ\\KHOA BÁCH KHOA\par}
+\vspace{1.5cm}{\bfseries\Large PHẠM DUY TÂN\\MSSV: B2407059\par}\vspace{1cm}
+{\bfseries\fontsize{16}{20}\selectfont CÁC YẾU TỐ ẢNH HƯỞNG ĐẾN QUYẾT ĐỊNH CHỌN TRƯỜNG/NGÀNH HỌC CỦA HỌC SINH THPT TẠI CÁC TỈNH ĐỒNG BẰNG SÔNG CỬU LONG\par}
+\vspace{1cm}{\bfseries LUẬN VĂN TỐT NGHIỆP ĐẠI HỌC\\Ngành: Kỹ thuật điện -- Khóa: K50\par}
+\vspace{1.5cm}\begin{flushright}\begin{minipage}{0.52\textwidth}\centering
+{\bfseries CÁN BỘ HƯỚNG DẪN\\TS. NGÔ QUANG HIẾU\par}
+\end{minipage}\end{flushright}
+\vfill{\bfseries Cần Thơ, 2026\par}
+\end{titlepage}
+\clearpage\input{frontmatter/approval}\clearpage
+\input{frontmatter/evaluation}\clearpage
+\input{frontmatter/commitment}\clearpage
+\input{frontmatter/acknowledgements}\clearpage
+\pagenumbering{roman}\setcounter{page}{1}
+\tableofcontents\clearpage
+\listoftables\clearpage
+\listoffigures\clearpage
+\input{frontmatter/abbreviations}\clearpage
+\input{frontmatter/abstract}\clearpage
+\input{chapters/introduction}\clearpage
+\pagenumbering{arabic}\setcounter{page}{1}
+\input{chapters/chapter1}\input{chapters/chapter2}\input{chapters/chapter3}
+\input{chapters/conclusion}
+\cleardoublepage\bibliographystyle{unsrtnat}\bibliography{references}
+\appendix\input{appendices/questionnaire}\input{appendices/coding}\input{appendices/spss}
+\end{document}
