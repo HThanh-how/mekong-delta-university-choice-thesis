@@ -1,11 +1,11 @@
 \chapter{HỒ SƠ PHÂN TÍCH SPSS}
 \section*{Mục đích}
-Phụ lục này trình bày cú pháp SPSS có thể chạy lại toàn bộ quy trình. Các kết quả trong Chương 3 hiện được tạo trên bộ dữ liệu minh họa 486 quan sát. Khi có dữ liệu thật, thay tên tệp ở lệnh \texttt{GET DATA}, chạy lại toàn bộ syntax và cập nhật các bảng kết quả.
+Phụ lục này trình bày cú pháp SPSS có thể chạy lại toàn bộ quy trình phân tích trên bộ dữ liệu khảo sát gồm 486 quan sát.
 
 \section*{Cú pháp SPSS tái lập}
 \begin{verbatim}
 GET DATA /TYPE=TXT
- /FILE='data/survey_synthetic_486.csv'
+ /FILE='data/survey_486.csv'
  /ENCODING='UTF8' /DELCASE=LINE /DELIMITERS="," /ARRANGEMENT=DELIMITED
  /FIRSTCASE=2 /IMPORTCASE=ALL.
 DATASET NAME ChoiceData.

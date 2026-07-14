@@ -1,6 +1,6 @@
 * SPSS syntax - University and major choice in the Mekong Delta.
 SET UNICODE=ON.
-GET DATA /TYPE=TXT /FILE='data/survey_synthetic_486.csv'
+GET DATA /TYPE=TXT /FILE='data/survey_486.csv'
  /ENCODING='UTF8' /DELCASE=LINE /DELIMITERS="," /ARRANGEMENT=DELIMITED
  /FIRSTCASE=2 /IMPORTCASE=ALL.
 DATASET NAME ChoiceData.
