@@ -1,12 +1,44 @@
-% Hình sử dụng số liệu tính trực tiếp từ data/survey_486.csv.
-\begin{figure}[H]\centering\begin{tikzpicture}\begin{groupplot}[group style={group size=2 by 1,horizontal sep=1.3cm},width=.46\textwidth,height=6cm,ybar,ymin=0,ymax=65,nodes near coords]\nextgroupplot[ylabel={Tỷ lệ (\%)},symbolic x coords={Nam,Nữ,Khác},xtick=data]\addplot[fill=teal,draw=teal!75!black] coordinates {(Nam,44.9) (Nữ,53.7) (Khác,1.4)};\nextgroupplot[symbolic x coords={Thành thị,Nông thôn},xtick=data,x tick label style={rotate=20,anchor=east}]\addplot[fill=orange,draw=orange!75!black] coordinates {(Thành thị,42.2) (Nông thôn,57.8)};\end{groupplot}\end{tikzpicture}\caption{Cơ cấu giới tính và khu vực cư trú}\label{fig:sample-profile}\end{figure}
+% Reusable figures generated from data/survey_486.csv.
+\newcommand{\figSampleProfile}{%
+\begin{figure}[H]\centering
+\begin{tikzpicture}\begin{groupplot}[group style={group size=2 by 1,horizontal sep=1.3cm},width=.46\textwidth,height=6cm,ybar,ymin=0,ymax=65,nodes near coords]
+\nextgroupplot[ylabel={Tỷ lệ (\%)},symbolic x coords={Nam,Nữ,Khác},xtick=data]\addplot[fill=teal,draw=teal!75!black] coordinates {(Nam,44.9) (Nữ,53.7) (Khác,1.4)};
+\nextgroupplot[symbolic x coords={Thành thị,Nông thôn},xtick=data,x tick label style={rotate=20,anchor=east}]\addplot[fill=orange,draw=orange!75!black] coordinates {(Thành thị,42.2) (Nông thôn,57.8)};
+\end{groupplot}\end{tikzpicture}
+\caption{Cơ cấu giới tính và khu vực cư trú}\label{fig:sample-profile}\end{figure}}
 
-\begin{figure}[H]\centering\begin{tikzpicture}\begin{axis}[xbar,width=.9\textwidth,height=7cm,xmin=3.3,xmax=4.4,xlabel={Điểm trung bình (1--5)},symbolic y coords={SOC,COM,COS,LOC,REP,DEC,FIT,CAR},ytick=data,nodes near coords,grid=major]\addplot[fill=sky,draw=sky!75!black] coordinates {(3.584,SOC) (3.698,COM) (3.735,COS) (3.779,LOC) (3.939,REP) (3.961,DEC) (4.066,FIT) (4.228,CAR)};\end{axis}\end{tikzpicture}\caption{Điểm trung bình các thang đo}\label{fig:means}\end{figure}
+\newcommand{\figScaleMeans}{%
+\begin{figure}[H]\centering
+\begin{tikzpicture}\begin{axis}[xbar,width=.9\textwidth,height=7cm,xmin=3.3,xmax=4.4,xlabel={Điểm trung bình (1--5)},symbolic y coords={SOC,COM,COS,LOC,REP,DEC,FIT,CAR},ytick=data,nodes near coords,grid=major]
+\addplot[fill=sky,draw=sky!75!black] coordinates {(3.584,SOC) (3.698,COM) (3.735,COS) (3.779,LOC) (3.939,REP) (3.961,DEC) (4.066,FIT) (4.228,CAR)};
+\end{axis}\end{tikzpicture}
+\caption{Điểm trung bình các thang đo}\label{fig:means}\end{figure}}
 
-\begin{figure}[H]\centering\begin{tikzpicture}\begin{axis}[ybar,width=.9\textwidth,height=7cm,ymin=.68,ymax=.84,ylabel={Cronbach's Alpha},symbolic x coords={FIT,CAR,REP,COS,SOC,COM,LOC,DEC},xtick=data,nodes near coords,grid=major]\addplot[fill=gold,draw=gold!75!black] coordinates {(FIT,.771) (CAR,.766) (REP,.801) (COS,.793) (SOC,.782) (COM,.772) (LOC,.771) (DEC,.725)};\end{axis}\end{tikzpicture}\caption{Độ tin cậy các thang đo}\label{fig:alpha}\end{figure}
+\newcommand{\figReliability}{%
+\begin{figure}[H]\centering
+\begin{tikzpicture}\begin{axis}[ybar,width=.9\textwidth,height=7cm,ymin=.68,ymax=.84,ylabel={Cronbach's Alpha},symbolic x coords={FIT,CAR,REP,COS,SOC,COM,LOC,DEC},xtick=data,nodes near coords,grid=major]
+\addplot[fill=gold,draw=gold!75!black] coordinates {(FIT,.771) (CAR,.766) (REP,.801) (COS,.793) (SOC,.782) (COM,.772) (LOC,.771) (DEC,.725)};
+\end{axis}\end{tikzpicture}
+\caption{Độ tin cậy các thang đo}\label{fig:alpha}\end{figure}}
 
-\begin{figure}[H]\centering\begin{tikzpicture}\begin{axis}[ybar,width=.9\textwidth,height=7cm,ymin=0,ymax=10,ylabel={Phương sai giải thích (\%)},symbolic x coords={FIT,CAR,REP,COS,SOC,COM,LOC},xtick=data,nodes near coords,grid=major]\addplot[fill=indigo,draw=indigo!75!black] coordinates {(FIT,8.52) (CAR,8.52) (REP,9.07) (COS,8.92) (SOC,8.72) (COM,8.58) (LOC,8.58)};\end{axis}\end{tikzpicture}\caption{Tỷ lệ phương sai giải thích của bảy nhân tố}\label{fig:variance}\end{figure}
+\newcommand{\figVariance}{%
+\begin{figure}[H]\centering
+\begin{tikzpicture}\begin{axis}[ybar,width=.9\textwidth,height=7cm,ymin=0,ymax=10,ylabel={Phương sai giải thích (\%)},symbolic x coords={FIT,CAR,REP,COS,SOC,COM,LOC},xtick=data,nodes near coords,grid=major]
+\addplot[fill=indigo,draw=indigo!75!black] coordinates {(FIT,8.52) (CAR,8.52) (REP,9.07) (COS,8.92) (SOC,8.72) (COM,8.58) (LOC,8.58)};
+\end{axis}\end{tikzpicture}
+\caption{Tỷ lệ phương sai giải thích của bảy nhân tố}\label{fig:variance}\end{figure}}
 
-\begin{figure}[H]\centering\begin{tikzpicture}\begin{axis}[xbar,width=.9\textwidth,height=7.5cm,xmin=0,xmax=.37,xlabel={Hệ số Beta chuẩn hóa},symbolic y coords={COM,SOC,LOC,COS,REP,CAR,FIT},ytick=data,xtick={0,.05,.10,.15,.20,.25,.30,.35},xticklabel={\pgfmathprintnumber[fixed,precision=2,zerofill]{\tick}},nodes near coords={\pgfmathprintnumber[fixed,precision=2,zerofill]{\pgfplotspointmeta}},grid=major]\addplot[fill=coral,draw=coral!75!black] coordinates {(.060,COM) (.134,SOC) (.167,LOC) (.177,COS) (.205,REP) (.219,CAR) (.331,FIT)};\end{axis}\end{tikzpicture}\caption{Hệ số tác động chuẩn hóa trong mô hình}\label{fig:beta}\end{figure}
+\newcommand{\figBeta}{%
+\begin{figure}[H]\centering
+\begin{tikzpicture}\begin{axis}[xbar,width=.9\textwidth,height=7.5cm,xmin=0,xmax=.37,xlabel={Hệ số Beta chuẩn hóa},symbolic y coords={COM,SOC,LOC,COS,REP,CAR,FIT},ytick=data,xtick={0,.05,.10,.15,.20,.25,.30,.35},nodes near coords,grid=major]
+\addplot[fill=coral,draw=coral!75!black] coordinates {(.060,COM) (.134,SOC) (.167,LOC) (.177,COS) (.205,REP) (.219,CAR) (.331,FIT)};
+\end{axis}\end{tikzpicture}
+\caption{Hệ số tác động chuẩn hóa trong mô hình}\label{fig:beta}\end{figure}}
 
-\begin{figure}[H]\centering\begin{tikzpicture}\begin{axis}[ybar,bar width=15pt,width=.9\textwidth,height=7cm,ymin=3.5,ymax=3.9,ylabel={Điểm trung bình},symbolic x coords={Thành thị,Nông thôn,Thu nhập thấp,Thu nhập vừa,Thu nhập cao},xtick=data,x tick label style={rotate=25,anchor=east},nodes near coords,grid=major]\addplot[fill=teal,draw=teal!75!black] coordinates {(Thành thị,3.743) (Nông thôn,3.806)};\addplot[fill=orange,draw=orange!75!black] coordinates {(Thu nhập thấp,3.705) (Thu nhập vừa,3.755) (Thu nhập cao,3.753)};\end{axis}\end{tikzpicture}\caption{LOC theo khu vực và COS theo nhóm thu nhập}\label{fig:groups}\end{figure}
+\newcommand{\figGroupMeans}{%
+\begin{figure}[H]\centering
+\begin{tikzpicture}\begin{axis}[ybar,bar width=15pt,width=.9\textwidth,height=7cm,ymin=3.5,ymax=3.9,ylabel={Điểm trung bình},symbolic x coords={Thành thị,Nông thôn,Thu nhập thấp,Thu nhập vừa,Thu nhập cao},xtick=data,x tick label style={rotate=25,anchor=east},nodes near coords,grid=major]
+\addplot[fill=teal,draw=teal!75!black] coordinates {(Thành thị,3.743) (Nông thôn,3.806)};
+\addplot[fill=orange,draw=orange!75!black] coordinates {(Thu nhập thấp,3.705) (Thu nhập vừa,3.755) (Thu nhập cao,3.753)};
+\end{axis}\end{tikzpicture}
+\caption{LOC theo khu vực và COS theo nhóm thu nhập}\label{fig:groups}\end{figure}}

@@ -1,4 +1,5 @@
 \chapter{NỘI DUNG VÀ KẾT QUẢ NGHIÊN CỨU}
+\input{chapters/figures}
 \section{Mô tả tệp phân tích}
 Tệp dữ liệu phân tích gồm 486 quan sát và 36 biến, không có giá trị thiếu. Ngoài mã số quan sát, tệp lưu ba đặc điểm nền (giới tính, khu vực cư trú và thu nhập hộ gia đình) cùng 32 biến Likert thuộc tám thang đo. Các tỷ lệ dưới đây được tính trực tiếp từ tệp \texttt{data/survey\_486.csv}.
 
@@ -10,8 +11,8 @@ Thu nhập gia đình/tháng & Dưới 10 triệu đồng & 196 & 40,3\\ & 10--2
 \end{tabularx}\end{table}
 
 Mẫu có tỷ lệ nữ cao hơn nam 8,8 điểm phần trăm; học sinh nông thôn chiếm 57,8\%. Hai nhóm thu nhập dưới 10 triệu đồng và từ 10--20 triệu đồng có quy mô gần tương đương, trong khi nhóm trên 20 triệu đồng chiếm 17,9\%. Những đặc điểm này cần được lưu ý khi diễn giải và giới hạn khả năng suy rộng.
-
-\input{chapters/figures}
+Hình~\ref{fig:sample-profile} trực quan hóa hai đặc điểm nền có số nhóm gọn nhất; thông tin thu nhập được trình bày trong Bảng~\ref{tab:sample} và được phân tích lại ở mục so sánh nhóm.
+\figSampleProfile
 
 \section{Thống kê mô tả các thang đo}
 \begin{table}[H]\centering\caption{Thống kê mô tả theo nhân tố}\label{tab:desc}
@@ -19,6 +20,16 @@ Mẫu có tỷ lệ nữ cao hơn nam 8,8 điểm phần trăm; học sinh nông
 FIT & 4 & 4,066 & 0,512\\ CAR & 4 & 4,228 & 0,497\\ REP & 4 & 3,939 & 0,554\\ COS & 4 & 3,735 & 0,527\\ SOC & 4 & 3,584 & 0,545\\ COM & 4 & 3,698 & 0,528\\ LOC & 4 & 3,779 & 0,532\\ DEC & 4 & 3,961 & 0,437\\\bottomrule
 \end{tabular}\end{table}
 Triển vọng nghề nghiệp có điểm trung bình cao nhất, tiếp đến là phù hợp cá nhân. Ảnh hưởng xã hội có điểm trung bình thấp nhất nhưng vẫn cao hơn trung điểm của thang đo. Điểm DEC đạt 3,961, cho thấy mức ưu tiên và sẵn sàng đăng ký nhìn chung tương đối cao trong mẫu.
+Thứ tự này được thể hiện ở Hình~\ref{fig:means}. Xét ở cấp biến quan sát, Hình~\ref{fig:item-means} cho thấy các mục trong cùng thang đo có mức trung bình tương đối gần nhau, chưa xuất hiện một mục riêng lẻ chi phối hoàn toàn điểm nhân tố. Hình~\ref{fig:likert-distribution} bổ sung góc nhìn về toàn bộ phân bố phản hồi thay vì chỉ sử dụng giá trị trung bình.
+\figScaleMeans
+\begin{figure}[H]\centering
+\includegraphics[width=.88\textwidth]{figures/item-means.png}
+\caption{Điểm trung bình của 32 biến quan sát}\label{fig:item-means}
+\end{figure}
+\begin{figure}[H]\centering
+\includegraphics[width=.9\textwidth]{figures/likert-distribution.png}
+\caption{Phân bố mức trả lời theo thang đo}\label{fig:likert-distribution}
+\end{figure}
 
 \section{Kiểm định độ tin cậy}
 \begin{table}[H]\centering\caption{Độ tin cậy thang đo}\label{tab:alpha}
@@ -26,21 +37,50 @@ Triển vọng nghề nghiệp có điểm trung bình cao nhất, tiếp đến
 FIT & 0,771 & 0,528 & Đạt\\ CAR & 0,766 & 0,546 & Đạt\\ REP & 0,801 & 0,593 & Đạt\\ COS & 0,793 & 0,584 & Đạt\\ SOC & 0,782 & 0,572 & Đạt\\ COM & 0,772 & 0,540 & Đạt\\ LOC & 0,771 & 0,531 & Đạt\\ DEC & 0,725 & 0,457 & Đạt\\\bottomrule
 \end{tabular}\end{table}
 Cronbach's Alpha của các thang đo nằm trong khoảng 0,725--0,801 và các tương quan biến--tổng hiệu chỉnh đều lớn hơn 0,30. Vì vậy, cả tám thang đo đáp ứng ngưỡng sử dụng trong nghiên cứu khám phá; không có biến nào bị loại chỉ nhằm làm tăng Alpha.
+Hình~\ref{fig:alpha} cho thấy toàn bộ hệ số Alpha đều vượt ngưỡng 0,70; REP có độ tin cậy cao nhất và DEC có hệ số thấp nhất nhưng vẫn đạt yêu cầu.
+\figReliability
 
 \section{Phân tích nhân tố khám phá}
 EFA cho 28 biến độc lập đạt KMO = 0,754; kiểm định Bartlett $\chi^2=3.768,26$, $df=378$, $p<0,001$. Phép trích nhân tố và xoay Promax tạo bảy nhân tố có eigenvalue lớn hơn 1. Tổng phương sai trích đạt 60,91\%; tải chính của các biến nằm trong khoảng 0,731--0,808. Cấu trúc tải cho thấy bốn biến của mỗi thang đo cùng hội tụ về một nhân tố và không có tải chéo đáng kể.
+
+\begin{table}[H]\centering\caption{Kiểm định KMO và Bartlett}\label{tab:kmo}
+\begin{tabular}{p{8.3cm}r}\toprule Chỉ tiêu & Giá trị\\\midrule
+Kaiser--Meyer--Olkin Measure of Sampling Adequacy & 0,754\\
+Bartlett's Test -- Approx. Chi-Square & 3.768,260\\
+Bậc tự do ($df$) & 378\\
+Mức ý nghĩa ($p$) & $<0,001$\\\bottomrule
+\end{tabular}\end{table}
 
 \begin{table}[H]\centering\caption{Tóm tắt EFA}\label{tab:efa}
 \begin{tabular}{lrrr}\toprule Nhân tố & Số biến & Phương sai (\%) & Tải chính nhỏ nhất\\\midrule
 FIT & 4 & 8,52 & 0,731\\ CAR & 4 & 8,52 & 0,747\\ REP & 4 & 9,07 & 0,772\\ COS & 4 & 8,92 & 0,769\\ SOC & 4 & 8,72 & 0,763\\ COM & 4 & 8,58 & 0,740\\ LOC & 4 & 8,58 & 0,731\\\midrule
 Tổng & 28 & 60,91 & --\\\bottomrule
 \end{tabular}\end{table}
+Hình~\ref{fig:variance} cho thấy đóng góp phương sai của các nhân tố khá cân bằng, dao động từ 8,52\% đến 9,07\%. Điều này phù hợp với cấu trúc bảy khái niệm riêng biệt, thay vì một nhân tố chung lấn át toàn bộ thang đo.
+\figVariance
 
 \section{Tương quan và hồi quy}
 Tương quan giữa DEC và các biến độc lập nằm trong khoảng 0,030--0,342. FIT có tương quan mạnh nhất với DEC ($r=0,342$), trong khi COM có tương quan yếu nhất ($r=0,030$). Tương quan tuyệt đối lớn nhất giữa hai biến độc lập là 0,140, thấp hơn nhiều so với ngưỡng cảnh báo đa cộng tuyến. Mô hình hồi quy được ước lượng như sau:
+Ma trận đầy đủ ở Hình~\ref{fig:corr-matrix} cho phép đối chiếu đồng thời chiều và cường độ của mọi cặp tương quan.
+\begin{figure}[H]\centering
+\includegraphics[width=.82\textwidth]{figures/correlation-matrix.png}
+\caption{Ma trận tương quan Pearson giữa các thang đo}\label{fig:corr-matrix}
+\end{figure}
 \begin{equation}
 DEC=\beta_0+\beta_1FIT+\beta_2CAR+\beta_3REP+\beta_4COS+\beta_5SOC+\beta_6COM+\beta_7LOC+\varepsilon.
 \end{equation}
+
+\begin{table}[H]\centering\caption{Tóm tắt mô hình hồi quy}\label{tab:model-summary}
+\begin{tabular}{ccccc}\toprule $R$ & $R^2$ & $R^2$ hiệu chỉnh & Sai số ước lượng & Durbin--Watson\\\midrule
+0,521 & 0,271 & 0,261 & 0,376 & 2,064\\\bottomrule
+\end{tabular}\end{table}
+
+\begin{table}[H]\centering\caption{Phân tích phương sai của mô hình}\label{tab:anova}
+\begin{tabular}{lrrrrr}\toprule Nguồn & Tổng bình phương & $df$ & Bình phương TB & $F$ & $p$\\\midrule
+Hồi quy & 25,131 & 7 & 3,590 & 25,423 & $<0,001$\\
+Phần dư & 67,501 & 478 & 0,141 & & \\
+Tổng & 92,632 & 485 & & & \\\bottomrule
+\end{tabular}\end{table}
 
 \begin{table}[H]\centering\caption{Kết quả hồi quy đa biến}\label{tab:reg}
 \begin{tabular}{lrrrrr}\toprule Biến & B & Sai số chuẩn & Beta & $p$ & VIF\\\midrule
@@ -56,12 +96,45 @@ LOC & 0,137 & 0,032 & 0,167 & $<0,001$ & 1,002\\\bottomrule
 \end{tabular}\end{table}
 
 Mô hình giải thích 26,1\% biến thiên DEC sau hiệu chỉnh. FIT có tác động chuẩn hóa mạnh nhất ($\beta=0,331$), tiếp theo là CAR, REP, COS, LOC và SOC. COM có hệ số dương nhưng không có ý nghĩa thống kê ($p=0,129$). Do đó H1--H5 và H7 được ủng hộ ở mức 5\%, còn H6 chưa được ủng hộ. Kết quả phản ánh quan hệ liên kết trong dữ liệu cắt ngang, không phải bằng chứng nhân quả.
+Thứ tự tác động được thể hiện trực quan ở Hình~\ref{fig:beta}. Bảng~\ref{tab:hypotheses} tổng hợp quyết định đối với từng giả thuyết.
+\figBeta
+\begin{table}[H]\centering\caption{Kết quả kiểm định giả thuyết}\label{tab:hypotheses}
+\begin{tabularx}{\textwidth}{p{1.4cm}p{2cm}p{2cm}p{2cm}X}\toprule Giả thuyết & Beta & $p$ & Chiều tác động & Kết luận\\\midrule
+H1: FIT & 0,331 & $<0,001$ & Dương & Ủng hộ\\
+H2: CAR & 0,219 & $<0,001$ & Dương & Ủng hộ\\
+H3: REP & 0,205 & $<0,001$ & Dương & Ủng hộ\\
+H4: COS & 0,177 & $<0,001$ & Dương & Ủng hộ\\
+H5: SOC & 0,134 & 0,001 & Dương & Ủng hộ\\
+H6: COM & 0,060 & 0,129 & Dương & Chưa được ủng hộ\\
+H7: LOC & 0,167 & $<0,001$ & Dương & Ủng hộ\\\bottomrule
+\end{tabularx}\end{table}
 
 \section{Kiểm tra giả định và độ bền}
 Durbin--Watson = 2,064, gần giá trị 2. VIF của các biến đều xấp xỉ 1 và nhỏ hơn 2. Tương quan Spearman giữa trị tuyệt đối phần dư và giá trị dự báo không có ý nghĩa ($\rho=0,001$, $p=0,982$); kiểm định Breusch--Pagan cũng không phát hiện phương sai thay đổi ($F=0,813$, $p=0,577$). Cook's Distance lớn nhất bằng 0,046, thấp hơn 1. Khi dùng sai số chuẩn robust HC3, kết luận về ý nghĩa của các biến không thay đổi; COM vẫn không có ý nghĩa ($p=0,149$).
+Các đồ thị ở Hình~\ref{fig:diagnostics} cho thấy phần dư bám tương đối sát phân phối chuẩn, không tạo hình phễu rõ theo giá trị dự báo và không có quan sát nào đạt Cook's Distance bằng 1.
+\begin{figure}[H]\centering
+\includegraphics[width=.94\textwidth]{figures/regression-diagnostics.png}
+\caption{Các biểu đồ chẩn đoán mô hình hồi quy}\label{fig:diagnostics}
+\end{figure}
+\begin{table}[H]\centering\caption{So sánh sai số chuẩn thông thường và robust HC3}\label{tab:robust}
+\begin{tabular}{lrrrr}\toprule Biến & SE thông thường & $p$ thông thường & SE HC3 & $p$ HC3\\\midrule
+FIT & 0,033 & $<0,001$ & 0,034 & $<0,001$\\
+CAR & 0,034 & $<0,001$ & 0,034 & $<0,001$\\
+REP & 0,031 & $<0,001$ & 0,032 & $<0,001$\\
+COS & 0,033 & $<0,001$ & 0,033 & $<0,001$\\
+SOC & 0,031 & 0,001 & 0,031 & 0,001\\
+COM & 0,033 & 0,129 & 0,034 & 0,149\\
+LOC & 0,032 & $<0,001$ & 0,036 & $<0,001$\\\bottomrule
+\end{tabular}\end{table}
 
 \section{Phân tích khác biệt nhóm}
-Điểm LOC trung bình của nhóm thành thị là 3,743 và nhóm nông thôn là 3,806; kiểm định Welch không ghi nhận khác biệt có ý nghĩa ($t=-1,314$, $p=0,189$). Điểm COS trung bình lần lượt là 3,705; 3,755 và 3,753 ở ba nhóm thu nhập; ANOVA không cho thấy khác biệt ($F=0,504$, $p=0,604$). DEC cũng không khác biệt theo giới tính ($F=0,150$, $p=0,861$). Vì vậy, dữ liệu hiện tại chưa cung cấp bằng chứng về khác biệt nhóm đối với ba so sánh này.
+Điểm LOC trung bình của nhóm thành thị là 3,743 và nhóm nông thôn là 3,806; kiểm định Welch không ghi nhận khác biệt có ý nghĩa ($t=-1,314$, $p=0,189$). Điểm COS trung bình lần lượt là 3,705; 3,755 và 3,753 ở ba nhóm thu nhập; ANOVA không cho thấy khác biệt ($F=0,504$, $p=0,604$). DEC cũng không khác biệt theo giới tính ($F=0,150$, $p=0,861$). Vì vậy, mẫu khảo sát chưa cung cấp bằng chứng về khác biệt nhóm đối với ba so sánh này.
+Kết quả trung bình được thể hiện ở Hình~\ref{fig:groups}; các hộp phân phối tại Hình~\ref{fig:group-boxplots} cho thấy mức độ chồng lấn lớn giữa các nhóm, phù hợp với kết quả kiểm định không có ý nghĩa.
+\figGroupMeans
+\begin{figure}[H]\centering
+\includegraphics[width=.96\textwidth]{figures/group-comparisons.png}
+\caption{Phân phối điểm theo khu vực, thu nhập và giới tính}\label{fig:group-boxplots}
+\end{figure}
 
 \section{Thảo luận}
 Kết quả đặt tính phù hợp cá nhân ở vị trí trung tâm. Điều này phù hợp tiếp cận người--môi trường: một lựa chọn có triển vọng nhưng không phù hợp sở thích và năng lực có thể khó tạo ý định bền vững. CAR và REP tiếp tục có hệ số đáng kể, cho thấy học sinh đồng thời cân nhắc cơ hội nghề nghiệp và tín hiệu chất lượng của cơ sở đào tạo.
@@ -69,7 +142,7 @@ Kết quả đặt tính phù hợp cá nhân ở vị trí trung tâm. Điều 
 COS và LOC có tác động dương, phản ánh các ràng buộc tài chính và địa lý trong quá trình lựa chọn. SOC có tác động nhỏ hơn nhưng vẫn có ý nghĩa. Ngược lại, COM không có ý nghĩa khi kiểm soát đồng thời các yếu tố khác. Kết quả này không hàm ý truyền thông tuyển sinh không cần thiết; truyền thông có thể đóng vai trò cung cấp thông tin nền, nhưng chưa thể hiện tác động độc lập rõ ràng lên DEC trong mô hình hiện tại.
 
 \section{Hàm ý quản trị}
-\subsection{Đối với Trường Đại học Cần Thơ và các cơ sở đào tạo}
+\subsection{Đối với Đại học Cần Thơ và các cơ sở đào tạo}
 \begin{enumerate}[label=\arabic*)]
 \item Xây dựng trang ``khám phá ngành'' liên kết sở thích--năng lực với chuẩn đầu ra, học phần và vị trí việc làm.
 \item Công bố dữ liệu việc làm có phương pháp, thời điểm khảo sát và cỡ mẫu thay cho các thông điệp chung chung.
@@ -95,7 +168,7 @@ SOC & Có ý nghĩa & Tư vấn phối hợp học sinh--gia đình--giáo viên
 COM & Chưa có ý nghĩa & Đo hiệu quả nội dung và cải thiện khả năng tiếp cận\\\bottomrule
 \end{tabularx}\end{table}
 
-\section{Kịch bản triển khai cho Trường Đại học Cần Thơ}
+\section{Kịch bản triển khai cho Đại học Cần Thơ}
 Trong ngắn hạn, trường có thể chuẩn hóa trang thông tin từng ngành theo cùng cấu trúc: ngành học gì, cần năng lực nào, học phần tiêu biểu, chuẩn đầu ra, dữ liệu việc làm, chi phí và đầu mối hỏi đáp. Trong trung hạn, có thể xây dựng hệ thống tư vấn dựa trên sở thích và năng lực. Trong dài hạn, việc liên kết dữ liệu tuyển sinh--học tập--tốt nghiệp--việc làm sẽ giúp đánh giá chất lượng lựa chọn và phát hiện nhóm cần hỗ trợ sớm.
 
 \section{Bộ chỉ số đánh giá sau can thiệp}

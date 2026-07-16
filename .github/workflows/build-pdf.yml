@@ -50,6 +50,6 @@ jobs:
             Automated PDF build of the thesis.
 
             Author: Pham Duy Tan (B2407059)
-            Can Tho University - College of Engineering
+            Can Tho University - College of Engineering - Faculty of Electrical Engineering
           generate_release_notes: true
           files: dist/luan-van-chon-truong-nganh-dbscl.pdf
